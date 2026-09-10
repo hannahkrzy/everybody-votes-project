@@ -10,9 +10,10 @@
 ## Education
 
 **University of Cincinnati**  
-**Bachelor of Science in Computer Science & Bachelor of Arts in Philosophy**  
+Bachelor of Science in Computer Science  
+Bachelor of Arts in Philosophy  
 **Expected Graduation:** April 2027  
-**Certificates:** Cyber Operations, Software Engineering  
+**Certificates:** Cyber Operations, Software Engineering
 
 My interests include software engineering, cybersecurity, ethics, and using technology to solve real-world problems.
 
@@ -69,4 +70,4 @@ Developed a plant identification web application with a Python backend and JavaS
 
 ## Project Sought
 
-I am interested in developing a software application, web application, or video game. I would like to work on something interactive and user-focused that involves both creativity and technical problem-solving. I am open to different ideas and technologies and would like to create something interesting and achievable within the scope of Senior Design.
+For my Senior Design project, I am developing a modern interactive polling application inspired by the Wii Everybody Votes Channel. The application will allow users to answer polls, view voting results and statistics, and compare their responses with other users. I plan to build on the simple and interactive concept of the original channel while adding new features and adapting it for a modern platform.
