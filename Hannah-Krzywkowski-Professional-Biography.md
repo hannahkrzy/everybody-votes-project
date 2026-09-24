@@ -3,8 +3,8 @@
 ## Contact Information
 
 **Name:** Hannah Krzywkowski  
-**Email:** krzywkhr@mail.uc.edu  
-**LinkedIn:** linkedin.com/in/hannah-krzywkowski  
+**Email:** [krzywkhr@mail.uc.edu](mailto:krzywkhr@mail.uc.edu)  
+**LinkedIn:** [linkedin.com/in/hannah-krzywkowski](https://www.linkedin.com/in/hannah-krzywkowski/)  
 **Location:** Cincinnati, OH  
 
 ## Education
