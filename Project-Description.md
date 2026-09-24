@@ -8,13 +8,13 @@ Everybody Votes
 
 **Hannah Krzywkowski**
 
-B.S. Computer Science
-B.A. Philosophy
+B.S. Computer Science<br>
+B.A. Philosophy<br>
 Email: [krzywkhr@mail.uc.edu](mailto:krzywkhr@mail.uc.edu)
 
 **Aryan Balyan**
 
-B.S. Computer Science
+B.S. Computer Science<br>
 Email: [balyanas@mail.uc.edu](mailto:balyanas@mail.uc.edu)
 
 ## Project Topic Area
