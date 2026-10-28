@@ -25,4 +25,7 @@ The project will be a modern interactive polling application inspired by Nintend
 
 ## Faculty/Industry Advisor
 
-To be determined.
+**Hrishikesh Vinayak Bhide, PhD**
+
+Department: Computer Science, CEAS<br>
+Email: [bhidehk@ucmail.uc.edu](mailto:bhidehk@ucmail.uc.edu)
