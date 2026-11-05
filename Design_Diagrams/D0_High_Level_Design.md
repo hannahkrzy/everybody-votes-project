@@ -54,7 +54,7 @@ Both diagrams include their own legends. C1–C5 are logical application modules
 
 **Example browser-to-server JSON vote request routed to I3:**
 ```json
-{"poll_id":"poll-12","choice_id":"choice-2","guest_session_id":"guest-abc"}
+{"poll_id":"poll-12","choice_id":"choice-2"}
 ```
 **Response:** `{"vote_id":"vote-77","accepted":true,"reason":"recorded"}`. All datetimes use ISO 8601 with timezone.
 
