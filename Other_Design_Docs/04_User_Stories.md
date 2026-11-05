@@ -91,7 +91,7 @@ UC-01 and UC-02 cover the main voting and publishing workflows. AC-03.1 through 
 | AC-02.3 | An administrator enters 7 choices or a closing time at/before opening | They publish | No poll is published; the invalid field is identified. |
 | AC-03.1 | A vote fails because of a closed poll, invalid input, or storage error | Maintainer checks the existing error message or basic log | The cause can be distinguished without exposing passwords, demographics, or individual votes. |
 | AC-03.2 | A registered voter leaves age range, gender, and region blank | They save their profile and vote | Both actions succeed without requiring those fields. |
-| AC-03.3 | Demographic groups for a completed poll have 4 and 5 valid responses | A voter requests a single-category comparison | The 4-response breakdown is hidden; the 5-response breakdown can be displayed. |
+| AC-03.3 | A completed poll has demographic groups with 4 and 5 valid responses | A voter requests a single-category demographic comparison | The entire demographic breakdown is hidden because one group has fewer than 5 responses. The breakdown is displayed only when every nonempty group has at least 5 responses. Overall poll results remain visible. |
 
 For AC-01.1, each percentage equals (answer count ÷ total valid responses) × 100, rounded to one decimal place. Displayed counts must add up to the poll's valid-response total. These criteria can become tests in Week 10.
 
@@ -190,7 +190,7 @@ The interviews suggest *why* users might need these behaviors; the comparison su
 
 **Required minimum product:** A responsive website with guest voting, registered accounts, administrator-created timed polls, up to three featured polls, 2–6 answer choices, results, simple predictions, saved voting history, basic personal statistics, and a completed-poll archive. Only administrators publish official polls. A registered account may cast one vote and make one prediction per poll; editing either is not required. Predictions are checked after closing.
 
-**Privacy and accessibility:** Demographic fields (age range, gender, broad region) are optional. Only single-category demographic comparisons are required, and a group's breakdown appears only when it has at least five valid responses to that poll. This reduces disclosure risk but does not guarantee anonymity. Voting and results must be usable by keyboard and understandable without color alone.
+**Privacy and accessibility:** Demographic fields (age range, gender, broad region) are optional. Only single-category demographic comparisons are required. A demographic breakdown is displayed only when every nonempty group in that category has at least five valid responses to the poll. If any group has fewer than five responses, the entire breakdown for that category is hidden. Overall poll results remain visible. This reduces disclosure risk but does not guarantee anonymity. Voting and results must be usable by keyboard and understandable without color alone.
 
 **Excluded or optional:** User-submitted poll suggestions, advanced statistics, combined demographic filters, notifications, automatic recurring schedules, social features, public poll creation, AI-generated polls, separate monitoring dashboards, and native mobile apps.
 
