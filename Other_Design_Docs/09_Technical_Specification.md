@@ -8,8 +8,9 @@
 | Version | Date | Change | Author |
 |---|---|---|---|
 | 1.0 draft | 2026-11-04 | Consolidated D0/D1/D2 interfaces, selected stack, constraints, and proposed traceability/test IDs | Hannah Krzywkowski and Aryan Balyan (reviewed and approved by both team members)|
+| 1.1 draft | 2026-11-10 | Expanded TC-001–TC-014 into A/B/C scenarios for Assignment 10; updated requirement traceability. No functional requirements or architecture changed. | Hannah Krzywkowski and Aryan Balyan |
 
-This technical specification traces to Requirements_Document.md, version 1.0 draft, dated November 04, 2026.
+This technical specification traces to Requirements_Document.md, version 1.1 draft, revised November 10, 2026.
 
 This is a specification, not evidence of completed code or advisor approval. Proposed measurable targets in NFR-01 and NFR-03 are new to the requirements baseline and await approval.
 
@@ -81,7 +82,7 @@ Enable `PRAGMA foreign_keys=ON` for every connection. Use SQLite transactions (i
 | Storage | SQLite via Python `sqlite3` | Free file database with FK/UNIQUE/transactions; REQ-03–REQ-05, NFR-04, CON-01 |
 | Scheduling | UTC comparisons using Python `datetime` | No background worker; REQ-02, CON-01 |
 | Deployment | Local Flask/SQLite demo; optional verified free HTTPS host | Meets $0 baseline; CON-01; OQ-01 unresolved |
-| Tests | Python unittest or pytest (free), Flask test client, manual keyboard testing | Repeatable TC-001–TC-014; NFR-01–NFR-04, CON-04 |
+| Tests | Python unittest or pytest (free), Flask test client, manual keyboard testing | Repeatable TC-001A-C through TC-014A-C; NFR-01–NFR-04, CON-04 |
 
 The team will pin supported package versions before implementation. No React app, PostgreSQL server, Redis, cloud queue, or paid API is needed. SQLite concurrency is deliberately limited to a small senior-design demo; load testing will establish actual limits.
 
@@ -98,24 +99,24 @@ The team will pin supported package versions before implementation. No React app
 
 ## 6. Traceability matrix
 
-Statuses describe **design documentation**, not implementation. `Designed` means the named D0/D1/D2 component behavior has been specified; `Planned` means the verification threshold is newly proposed or not yet finalized. Test IDs are **proposed for Week 10** and must be reconciled with the actual test-plan file. Every row has a named design component.
+Statuses describe design documentation, not implementation. `Designed` means the named D0/D1/D2 component behavior has been specified; `Planned` means the verification threshold is newly proposed or not yet finalized. Test IDs are aligned with the Assignment 10 `Test_Plan.md`; A–C suffixes identify three scenarios for each REQ/NFR base ID. Every row has a named design component.
 
 | Req ID | Description | Design Component (D0/D1/D2) | Status | Test Case |
 |---|---|---|---|---|
-| REQ-01 | Admin publishes valid poll | C2/C3/C6 (D2 poll publishing) | Designed | TC-001 |
-| REQ-02 | Three featured polls; UTC open/close | C3/C4 (D2 lifecycle) | Designed | TC-002 |
-| REQ-03 | One vote per guest session | C2/C4/C6 (D1 vote transaction) | Designed | TC-003 |
-| REQ-04 | Account access and account vote uniqueness | C2/C4/C6 (D2 account; D1 Vote) | Designed | TC-004 |
-| REQ-05 | Correct gated aggregate results | C5/C6 (D1 results) | Designed | TC-005 |
-| REQ-06 | Admin/history authorization | C2/C3/C5 (D2 role checks) | Designed | TC-006 |
-| REQ-07 | Prediction after vote, before close | C4/C5/C6 (D1 prediction) | Designed | TC-007 |
-| REQ-08 | Personal history and archive | C3/C5 (D2 pages and queries) | Designed | TC-008 |
-| REQ-09 | Optional demographics; suppression | C2/C5/C6 (D1 suppression) | Designed | TC-009 |
-| REQ-10 | Safe rejection and uncertain vote outcome | C1/C4/C6 (D2 error flow) | Designed | TC-010 |
-| NFR-01 | 95th percentile local latency threshold | C1/C3/C5/C6 (D0 performance; D1 queries) | Planned | TC-011 |
-| NFR-02 | Password, permission, and CSRF checks | C2/C6 (D2 access/security) | Designed | TC-012 |
-| NFR-03 | Usability and keyboard success threshold | C1 (D2 accessible templates) | Planned | TC-013 |
-| NFR-04 | Duplicate and failure reliability | C4/C6 (D1 transaction; D2 E14/E16) | Designed | TC-014 |
+| REQ-01 | Admin publishes valid poll | C2/C3/C6 (D2 poll publishing) | Designed | TC-001A-C |
+| REQ-02 | Three featured polls; UTC open/close | C3/C4 (D2 lifecycle) | Designed | TC-002A-C |
+| REQ-03 | One vote per guest session | C2/C4/C6 (D1 vote transaction) | Designed | TC-003A-C |
+| REQ-04 | Account access and account vote uniqueness | C2/C4/C6 (D2 account; D1 Vote) | Designed | TC-004A-C |
+| REQ-05 | Correct gated aggregate results | C5/C6 (D1 results) | Designed | TC-005A-C |
+| REQ-06 | Admin/history authorization | C2/C3/C5 (D2 role checks) | Designed | TC-006A-C |
+| REQ-07 | Prediction after vote, before close | C4/C5/C6 (D1 prediction) | Designed | TC-007A-C |
+| REQ-08 | Personal history and archive | C3/C5 (D2 pages and queries) | Designed | TC-008A-C |
+| REQ-09 | Optional demographics; suppression | C2/C5/C6 (D1 suppression) | Designed | TC-009A-C |
+| REQ-10 | Safe rejection and uncertain vote outcome | C1/C4/C6 (D2 error flow) | Designed | TC-010A-C |
+| NFR-01 | 95th percentile local latency threshold | C1/C3/C5/C6 (D0 performance; D1 queries) | Planned | TC-011A-C |
+| NFR-02 | Password, permission, and CSRF checks | C2/C6 (D2 access/security) | Designed | TC-012A-C |
+| NFR-03 | Usability and keyboard success threshold | C1 (D2 accessible templates) | Planned | TC-013A-C |
+| NFR-04 | Duplicate and failure reliability | C4/C6 (D1 transaction; D2 E14/E16) | Designed | TC-014A-C |
 | CON-01 | Zero-cost project | C1–C6 (D0 layered monolith; D1 stack) | Designed | TC-015 |
 | CON-02 | Ethical wording and gated results | C3/C5 (D2 publication; D1 results) | Designed | TC-016 |
 | CON-03 | Data minimization and privacy | C2/C5/C6 (D1/D2 privacy rules) | Designed | TC-017 |
@@ -129,7 +130,7 @@ Statuses describe **design documentation**, not implementation. `Designed` means
 |---|---|
 | Faculty advisor | Dr. Hrishikesh Vinayak Bhide |
 | Review date | **Not supplied / pending** |
-| Materials to review | `Requirements_Document.md` v1.0 draft; `Technical_Specification.md` v1.0 draft; traceability matrix |
+| Materials to review | `Requirements_Document.md` v1.1 draft; `Technical_Specification.md` v1.1 draft; traceability matrix |
 | Topics for discussion | Must/Should scope for two students; new latency/usability targets; local vs public demo; Spring 2027 implementation feasibility |
 | Changes resulting from advisor review | **None documented yet.** Record actual feedback and specific changes here after review. |
 | Follow-up owner | Hannah to coordinate; Aryan to check hosting feasibility |

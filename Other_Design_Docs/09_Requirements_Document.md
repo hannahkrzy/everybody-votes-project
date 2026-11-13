@@ -8,6 +8,7 @@
 | Version | Date | Change | Author |
 |---|---|---|---|
 | 1.0 draft | 2026-11-04 | Consolidated user stories, D0–D2, constraints, and project plan; assigned stable requirement IDs and proposed test IDs | Hannah Krzywkowski and Aryan Balyan (reviewed and approved by both team members) |
+| 1.1 draft | 2026-11-10 | Updated verification test IDs to match Assignment 10's A/B/C test scenarios; no requirements changed. | Hannah Krzywkowski and Aryan Balyan |
 
 This draft is prepared after the October 30 deadline; the date above is the document preparation date, **not** a claim of on-time submission or advisor approval. IDs are permanent: withdrawn requirements will retain their IDs and be logged rather than renumbered.
 
@@ -54,16 +55,16 @@ All conditions below are **proposed acceptance criteria**, not claims that the s
 
 | ID | Requirement | Priority | Source | Verification |
 |---|---|---|---|---|
-| REQ-01 | The system shall let an administrator publish a poll with **2–6 distinct nonempty choices**, a question, and a closing time later than its opening time; invalid drafts shall not be saved. | Must | US-03 | TC-001: valid/invalid poll creation |
-| REQ-02 | The system shall show **at most three** currently open featured polls, based on server UTC time, and reject votes outside `opens_at <= now < closes_at`. | Must | US-03; D2 | TC-002: poll timing and featured limit |
-| REQ-03 | The system shall accept **one vote per poll per current guest session** without registration and reject a second submission from that session. | Must | US-01 | TC-003: guest vote and duplicate |
-| REQ-04 | The system shall register users with unique username/email and hashed passwords, allow login/logout, and permit **one vote per account per poll**. | Must | UC-01; D2 C2 | TC-004: account and duplicate |
-| REQ-05 | The system shall return **counts and percentages for every choice**, including zero-vote choices, after a confirmed vote or poll closure; it shall hide live results from nonvoters. | Must | US-01, US-04 | TC-005: results and access |
-| REQ-06 | The system shall allow **only administrators** to publish polls and shall prevent users from viewing another account's private history. | Must | US-03, US-05; D2 | TC-006: permissions |
-| REQ-07 | The system shall let a registered user who already voted submit **at most one prediction** for that poll before it closes and determine whether it matched a winning choice after closing (ties count). | Should | D0–D2 | TC-007: prediction lifecycle |
-| REQ-08 | The system shall show a registered user their own voting history and basic participation statistics, and list closed polls in an archive. | Should | D0–D2; plan T08–T09 | TC-008: history and archive |
-| REQ-09 | The system shall accept blank optional age range, gender, and region fields and, for any single-dimension comparison, return **no demographic groups** if any nonempty group contains fewer than five votes. | Should | US-05; D1/D2 | TC-009: blank fields, 4/5 boundary |
-| REQ-10 | The system shall display a readable error when a vote is invalid, duplicate, closed, or unconfirmed, and shall not report a successful vote before its database transaction commits. | Must | US-02; D2 | TC-010: error and uncertain write |
+| REQ-01 | The system shall let an administrator publish a poll with **2–6 distinct nonempty choices**, a question, and a closing time later than its opening time; invalid drafts shall not be saved. | Must | US-03 | TC-001A-C: valid/invalid poll creation |
+| REQ-02 | The system shall show **at most three** currently open featured polls, based on server UTC time, and reject votes outside `opens_at <= now < closes_at`. | Must | US-03; D2 | TC-002A-C: poll timing and featured limit |
+| REQ-03 | The system shall accept **one vote per poll per current guest session** without registration and reject a second submission from that session. | Must | US-01 | TC-003A-C: guest vote and duplicate |
+| REQ-04 | The system shall register users with unique username/email and hashed passwords, allow login/logout, and permit **one vote per account per poll**. | Must | UC-01; D2 C2 | TC-004A-C: account and duplicate |
+| REQ-05 | The system shall return **counts and percentages for every choice**, including zero-vote choices, after a confirmed vote or poll closure; it shall hide live results from nonvoters. | Must | US-01, US-04 | TC-005A-C: results and access |
+| REQ-06 | The system shall allow **only administrators** to publish polls and shall prevent users from viewing another account's private history. | Must | US-03, US-05; D2 | TC-006A-C: permissions |
+| REQ-07 | The system shall let a registered user who already voted submit **at most one prediction** for that poll before it closes and determine whether it matched a winning choice after closing (ties count). | Should | D0–D2 | TC-007A-C: prediction lifecycle |
+| REQ-08 | The system shall show a registered user their own voting history and basic participation statistics, and list closed polls in an archive. | Should | D0–D2; plan T08–T09 | TC-008A-C: history and archive |
+| REQ-09 | The system shall accept blank optional age range, gender, and region fields and, for any single-dimension comparison, return **no demographic groups** if any nonempty group contains fewer than five votes. | Should | US-05; D1/D2 | TC-009A-C: blank fields, 4/5 boundary |
+| REQ-10 | The system shall display a readable error when a vote is invalid, duplicate, closed, or unconfirmed, and shall not report a successful vote before its database transaction commits. | Must | US-02; D2 | TC-010A-C: error and uncertain write |
 
 ## 6. Non-functional requirements
 
@@ -71,10 +72,10 @@ The numerical targets below are **new proposed verification thresholds** for thi
 
 | ID | Requirement | Priority | Source | Verification |
 |---|---|---|---|---|
-| NFR-01 | The system shall return the homepage, poll page, and unfiltered results in **2 seconds or less at the 95th percentile** across **100 requests per page** on the local demo computer with **1,000 seeded votes** and one client. | Should | D0 performance discussion; Week 9 spec | TC-011: timed local requests |
-| NFR-02 | The system shall store **0 plaintext passwords**, reject **100% of 10 tested unauthorized admin/history requests**, and reject **100% of 10 POST requests with missing/invalid CSRF tokens**. | Must | Constraints Essay—Security; D2 | TC-012: security checks |
-| NFR-03 | The system shall allow **4 of 5 test participants** to find an open poll, select an answer, submit, and read results within **2 minutes**, using labeled controls and keyboard-only navigation in a separate check. | Should | US-04; Constraints Essay—Diversity | TC-013: usability session |
-| NFR-04 | The system shall store **exactly one vote** for each identity/poll when **10 duplicate requests** are sent, and shall return a failure or unknown status rather than a false success if the database cannot confirm a write. | Must | D1/D2 concurrency; US-02 | TC-014: duplicates and storage outage |
+| NFR-01 | The system shall return the homepage, poll page, and unfiltered results in **2 seconds or less at the 95th percentile** across **100 requests per page** on the local demo computer with **1,000 seeded votes** and one client. | Should | D0 performance discussion; Week 9 spec | TC-011A-C: timed local requests |
+| NFR-02 | The system shall store **0 plaintext passwords**, reject **100% of 10 tested unauthorized admin/history requests**, and reject **100% of 10 POST requests with missing/invalid CSRF tokens**. | Must | Constraints Essay—Security; D2 | TC-012A-C: security checks |
+| NFR-03 | The system shall allow **4 of 5 test participants** to find an open poll, select an answer, submit, and read results within **2 minutes**, using labeled controls and keyboard-only navigation in a separate check. | Should | US-04; Constraints Essay—Diversity | TC-013A-C: usability session |
+| NFR-04 | The system shall store **exactly one vote** for each identity/poll when **10 duplicate requests** are sent, and shall return a failure or unknown status rather than a false success if the database cannot confirm a write. | Must | D1/D2 concurrency; US-02 | TC-014A-C: duplicates and storage outage |
 
 ## 7. MoSCoW summary
 
